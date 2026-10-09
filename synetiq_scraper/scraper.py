@@ -56,8 +56,8 @@ def get_synetic_url(search_string, car_category, search_any_day, day_to_search =
 
     # search per car and year = fiesta+2018
     if search_any_day == True :
-        return f"https://auctions.synetiq.co.uk/auction/items/?make=0&fuel=0&transmission=0&category={car_categories_damage[car_category]}&layout=r20&seller=0&location=0&distance=0&search={search_string}&sort=8&tab=1"
-    return f"https://auctions.synetiq.co.uk/auction/items/?make=0&fuel=0&transmission=0&category={car_categories_damage[car_category]}&layout=r20&seller=0&location=0&time={get_search_by_day(day_to_search)}&distance=0&search={search_string}&sort=8&tab=1"
+        return f"https://auctions.iaai.co.uk/auction/items/?make=0&fuel=0&transmission=0&category={car_categories_damage[car_category]}&layout=r20&seller=0&location=0&sformat=0&distance=&search={search_string}&sort=0&tab=0"
+    return f"https://auctions.iaai.co.uk/auction/items/?make=0&fuel=0&transmission=0&category={car_categories_damage[car_category]}&layout=r20&seller=0&location=0&sformat=0&time={get_search_by_day(day_to_search)}&distance=&search={search_string}&sort=0&tab=0"
 
 
 def get_html(url, request_headers, request_cookies, retry:True):
@@ -121,7 +121,7 @@ def _set_car_countdown(car, car_coundown_synetic):
 
 
 def _set_car_link(car, car_a_tag):
-    car.car_link = "https://auctions.synetiq.co.uk" + car_a_tag['href']
+    car.car_link = "https://auctions.iaai.co.uk" + car_a_tag['href']
 
 
 def find_car_data(car_row, car):
